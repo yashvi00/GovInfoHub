@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "routes": [
+    { "src": "/(.*)", "dest": "/FRONTEND/$1" },
+    { "src": "/", "dest": "/FRONTEND/main.html" }
+  ]
+}
