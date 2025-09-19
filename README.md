@@ -1,123 +1,117 @@
-# GovInfoHub 🏛️🤖
+# 🏛️ GovInfoHub
 
-An AI-powered chatbot that helps users quickly get information about government schemes, policies, and services.  
-Built with **FastAPI**, **LangChain**, **LlamaCpp**, and a simple **HTML/JS frontend**.
+*GovInfoHub* is an **AI-powered chatbot platform** that helps users explore and understand *government schemes, policies, and services*.  
+It features a **multilingual chatbot** (auto-detect + translate), a **FastAPI backend**, and a **minimal HTML/JS frontend**.  
 
----
-
-## ✨ Features
-- 🌐 Multilingual support (auto-detects language, translates, responds back in the same language)
-- 🤖 AI chatbot designed to use a local LLM (Mistral-7B GGUF via `llama-cpp`) when available
-- ⚡ REST API built with FastAPI
-- 🎨 Minimal frontend served with FastAPI or run standalone in browser
-- 🚀 Ready to deploy on Render (recommended) or Vercel (experimental)
+This project was built as part of my *learning journey in AI + full-stack development*.  
+I’m actively seeking **internship opportunities, collaborations, and open-source contributions**.
 
 ---
 
+## 🚀 Live Demo
+🔗 *Coming Soon on Render* (deployment in progress)
 
+---
 
-## ⚡ Getting Started (Local)
+## 🔧 Tech Stack
 
-### 1. Clone the repo
+### 🔹 Frontend:
+- *HTML5*  
+- *CSS3*  
+- *Vanilla JavaScript*  
+
+### 🔹 Backend:
+- *Python*  
+- *FastAPI*  
+- *LangChain*  
+- *LlamaCpp* (local LLM inference, Mistral-7B GGUF)  
+
+### 🔹 Other Tools & Services:
+- *Hugging Face Hub* – Model hosting  
+- *Google Translate API* – Language detection & translation  
+- *Uvicorn* – ASGI server  
+- *Render / Vercel* – Deployment  
+
+---
+
+## 📦 Features
+
+### 👤 User Features:
+- Chat with AI about government schemes & services.  
+- Automatic language detection (supports multiple languages).  
+- Responses translated back into the user’s language.  
+- Simple and responsive web interface.  
+
+### 🛠 Developer Features:
+- Backend served with *FastAPI*.  
+- Integrated with *LangChain* for prompt engineering.  
+- *CORS enabled* for frontend-backend communication.  
+- Ready-to-deploy setup with `requirements.txt`.  
+
+---
+
+## 🌟 Upcoming Features
+- 🔍 *Search functionality* for government documents.  
+- 📊 *Dashboard* for usage analytics.  
+- 🗄 *Database integration* (PostgreSQL/MongoDB).  
+- ☁ *Option to switch from local LLM to OpenAI API*.  
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Chatbot UI
+*(coming soon)*  
+![Frontend Screenshot Placeholder](./FRONTEND/src/screenshot.png)
+
+---
+
+## 🛠 Getting Started
+
+### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/yashvi00/GovInfoHub.git
 cd GovInfoHub
-2. Set up Python environment
-⚠️ Recommended: Python 3.11 (not 3.13 — some binary wheels are not yet available for newer versions)
-
+2️⃣ Backend Setup
 bash
 Copy code
-# Create virtual environment
+cd "AI - CHATBOT-MAIN"
 python -m venv venv
+.\venv\Scripts\activate   # Windows
+# or
+source venv/bin/activate  # macOS/Linux
 
-# Activate venv
-# Windows (PowerShell):
-.\venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
+pip install --upgrade pip setuptools wheel
+pip install -r ../requirements-frozen.txt
+Start Backend:
 
-# Upgrade pip/setuptools/wheel
-python -m pip install --upgrade pip setuptools wheel
-3. Install dependencies
 bash
 Copy code
-# Use the frozen requirements (preferred)
-pip install -r requirements-frozen.txt
+uvicorn app:app --reload
+3️⃣ Frontend Setup
+Option A: Served by FastAPI → open
+👉 http://127.0.0.1:8000
 
-# Or use the original requirements (may require build tools)
-pip install -r requirements.txt
-If pip install fails on packages like numpy or other native libraries, consider installing Python 3.11 or the Microsoft Build Tools (C++ workload) on Windows.
-
-4. Run backend
-bash
-Copy code
-# from project root or from AI - CHATBOT-MAIN folder
-uvicorn "AI - CHATBOT-MAIN.app:app" --reload
-Backend runs at → http://127.0.0.1:8000
-
-5. Open frontend
-Option A: Let FastAPI serve it → open http://127.0.0.1:8000
-
-Option B: Run local static server
+Option B: Run locally:
 
 bash
 Copy code
 cd FRONTEND/src
 python -m http.server 8080
-Open http://127.0.0.1:8080/main.html
+👉 Open http://127.0.0.1:8080/main.html
 
-☁️ Deployment
-Render (recommended)
-Render runs full Python web services (no serverless packaging limits):
+🤝 Looking to Collaborate
+I’m currently working solo and open to:
 
-Push the repository to GitHub.
+Internship roles 🧑‍💻
 
-On Render, create a New → Web Service, connect to your GitHub repo.
+Open-source contribution opportunities 🌐
 
-Use these settings:
+Project collaborations 🤝
 
-Build Command
+📫 Contact
+📧 Email: yashvirajpal0@gmail.com
+💼 LinkedIn: linkedin.com/in/yashvi00
+🐙 GitHub: github.com/yashvi00
 
-bash
-Copy code
-pip install -r requirements-frozen.txt
-Start Command
-
-bash
-
-cd "AI - CHATBOT-MAIN" && uvicorn app:app --host 0.0.0.0 --port $PORT
-Deploy and Render will give you a public URL.
-
-
-🛠️ Development Notes
-First-time model run will download Mistral-7B GGUF (~several GB) from HuggingFace if the app attempts to use a local GGUF model.
-
-If you don't want to run a local LLM, replace the LlamaCpp usage with an external API (OpenAI or another hosted LLM) — that's simpler and faster for a demo.
-
-We include guarded imports in app.py so the server can run without heavy ML libs for frontend testing.
-
-Keep venv/ out of the repository (add to .gitignore).
-
-✅ Quick Troubleshooting
-ModuleNotFoundError for fastapi / uvicorn: activate venv, then pip install fastapi uvicorn[standard].
-
-pip errors building numpy: switch to Python 3.11 or install Visual Studio Build Tools.
-
-git push 403/permission errors: use gh auth login (GitHub CLI), HTTPS with a PAT, or set up SSH keys.
-
-🤝 Contributing
-Contributions are welcome! Please open issues for bugs or feature requests, and submit pull requests for improvements.
-
-📜 License
-This project is open source — include your chosen license file (e.g., MIT).
-
-Contact
-If you need help running or deploying the project, open an issue or contact the maintainer at 
-yashvirajpal0@gmail.com
-www.linkedin.com/in/yashvi-rajpal
-
-
-
-
-
-
+⭐ Don’t forget to star this repo if you like it!
