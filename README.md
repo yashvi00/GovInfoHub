@@ -58,14 +58,6 @@ I’m actively seeking **internship opportunities, collaborations, and open-sour
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Chatbot UI
-*(coming soon)*  
-![Frontend Screenshot Placeholder](./FRONTEND/src/screenshot.png)
-
----
-
 ## 🛠 Getting Started
 
 ### 1️⃣ Clone the Repository
@@ -100,6 +92,9 @@ cd FRONTEND/src
 python -m http.server 8080
 👉 Open http://127.0.0.1:8080/main.html
 
+
+
+
 🤝 Looking to Collaborate
 I’m currently working solo and open to:
 
@@ -111,7 +106,8 @@ Project collaborations 🤝
 
 📫 Contact
 📧 Email: yashvirajpal0@gmail.com
-💼 LinkedIn: linkedin.com/in/yashvi00
+💼 LinkedIn: www.linkedin.com/in/yashvi-rajpal
 🐙 GitHub: github.com/yashvi00
 
 ⭐ Don’t forget to star this repo if you like it!
+
