@@ -14,25 +14,7 @@ Built with **FastAPI**, **LangChain**, **LlamaCpp**, and a simple **HTML/JS fron
 
 ---
 
-## 📂 Project Structure
-GovInfoHub/
-├── AI - CHATBOT-MAIN/ # Backend code
-│ ├── app.py # FastAPI entry point
-│ ├── main.py # Alt. script for testing LangChain directly
-│ ├── venv/ # Local virtual environment (ignored in Git)
-│ └── ...
-├── FRONTEND/ # Frontend files
-│ └── src/
-│ └── main.html # Chatbot UI
-├── requirements.txt # Original requirements
-├── requirements-frozen.txt # Locked dependencies from venv
-├── .gitignore
-└── README.md
 
-yaml
-Copy code
-
----
 
 ## ⚡ Getting Started (Local)
 
@@ -137,3 +119,4 @@ If you need help running or deploying the project, open an issue or contact the 
 makefile
 Copy code
 ::contentReference[oaicite:0]{index=0}
+
