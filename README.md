@@ -84,12 +84,10 @@ pip install -r requirements-frozen.txt
 Start Command
 
 bash
-Copy code
+
 cd "AI - CHATBOT-MAIN" && uvicorn app:app --host 0.0.0.0 --port $PORT
 Deploy and Render will give you a public URL.
 
-Vercel (experimental)
-Vercel supports Python serverless functions but has size and runtime limits — heavy native deps (NumPy, llama-cpp) often fail. If you want to try Vercel, create a small wrapper ASGI function and vercel.json, but be prepared to switch to Render if builds fail.
 
 🛠️ Development Notes
 First-time model run will download Mistral-7B GGUF (~several GB) from HuggingFace if the app attempts to use a local GGUF model.
@@ -114,9 +112,12 @@ Contributions are welcome! Please open issues for bugs or feature requests, and 
 This project is open source — include your chosen license file (e.g., MIT).
 
 Contact
-If you need help running or deploying the project, open an issue or contact the maintainer at yashvirajpal0@gmail.com.
+If you need help running or deploying the project, open an issue or contact the maintainer at 
+yashvirajpal0@gmail.com
+www.linkedin.com/in/yashvi-rajpal
 
-makefile
-Copy code
-::contentReference[oaicite:0]{index=0}
+
+
+
+
 
